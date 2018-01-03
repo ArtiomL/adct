@@ -8,7 +8,7 @@ FROM alpine
 LABEL maintainer="Artiom Lichtenstein" version="1.0.5"
 
 # Core dependencies
-RUN apk add --update --no-cache nodejs && \
+RUN apk add --update --no-cache nodejs nodejs-npm && \
 	rm -rf /var/cache/apk/*
 
 # adct:ws
