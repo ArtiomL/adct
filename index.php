@@ -32,7 +32,7 @@
 <body>
 	<div class="container">
 		<div class="docs-section" style="margin-top: 30px">
-			<?php if ($node = getenv("NODE")) { echo $node . "<br>"; } ?>
+			<?php if ($node = getenv("NODE")) echo $node . "<br>"; ?>
 			hello, <?php if ($user = $_SERVER["PHP_AUTH_USER"]) echo $user; else echo "world"; ?><br>
 			ip.src: <?php echo $_SERVER["REMOTE_ADDR"]; ?><br>
 			tcp.srcport: <?php echo $_SERVER["REMOTE_PORT"]; ?><br>
