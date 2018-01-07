@@ -34,10 +34,8 @@ docker run -dit -p 80:8080 -p 443:8443 artioml/adct
 Add a custom node name to the page title:
 
 ```shell
-docker run -dit -p 80:8080 -p 443:8443 -e NODE='Jon' artioml/adct
+docker run -dit -p 80:8080 -p 443:8443 -e NODE='Node1' artioml/adct
 ```
-
-&nbsp;
 
 #### WebSocket Echo
 ```shell
