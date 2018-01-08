@@ -41,3 +41,16 @@ docker run -dit -p 80:8080 -p 443:8443 -e NODE='Node1' artioml/adct
 ```shell
 docker run -dit -p 4433:4433 artioml/adct:ws
 ```
+
+&nbsp;&nbsp;
+
+## Service Tree
+```
+/
+├── secure/
+│   └── Basic Authentication (user:user)
+├── uri[0-9]*/
+│   └── Alias for /
+└── ws/
+    └── WebSocket Echo
+```
