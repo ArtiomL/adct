@@ -50,7 +50,7 @@ docker run -dit -p 4433:4433 artioml/adct:ws
 ├── secure/
 │   └── Basic Authentication (user:user)
 ├── uri[0-9]*/
-│   └── Alias for /
+│   └── Alias for DocumentRoot (/var/www/adct/)
 └── ws/
     └── WebSocket Echo
 ```
