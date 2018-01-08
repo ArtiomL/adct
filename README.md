@@ -46,7 +46,7 @@ docker run -dit -p 4433:4433 artioml/adct:ws
 &nbsp;&nbsp;
 
 ## Service Tree
-```shell
+```
 /
 ├── secure/
 │   └── Basic Authentication (user:user)
