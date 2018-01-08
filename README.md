@@ -14,6 +14,7 @@
 - [Installation](#installation)
 	- [Main Site](#main-site)
 	- [WebSocket Echo](#websocket-echo)
+- [Service Tree](#service-tree)
 - [License](LICENSE)
 
 &nbsp;&nbsp;
@@ -45,7 +46,7 @@ docker run -dit -p 4433:4433 artioml/adct:ws
 &nbsp;&nbsp;
 
 ## Service Tree
-```
+```shell
 /
 ├── secure/
 │   └── Basic Authentication (user:user)
