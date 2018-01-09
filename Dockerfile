@@ -1,11 +1,11 @@
 # adct - Dockerfile
 # https://github.com/ArtiomL/adct
 # Artiom Lichtenstein
-# v1.0.5, 22/12/2017
+# v1.0.6, 09/01/2018
 
 FROM debian:stable-slim
 
-LABEL maintainer="Artiom Lichtenstein" version="1.0.5"
+LABEL maintainer="Artiom Lichtenstein" version="1.0.6"
 
 # Core dependencies
 RUN apt-get update && \
@@ -17,6 +17,7 @@ RUN apt-get update && \
 
 # adct
 COPY / /var/www/adct/
+RUN cp /var/www/adct/index.php /var/www/adct/secure/index.php
 
 # apache2
 RUN cp /var/www/adct/etc/adct*.conf /etc/apache2/sites-available/
