@@ -2,7 +2,7 @@
 # adct - install.sh
 # https://github.com/ArtiomL/adct
 # Artiom Lichtenstein
-# v1.0.3, 22/12/2017
+# v1.0.4, 09/01/2018
 
 # Core dependencies
 sudo apt-get update
@@ -10,6 +10,7 @@ sudo apt-get -y install apache2 curl git php7.0
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo git clone https://github.com/ArtiomL/adct.git /var/www/adct
+sudo cp /var/www/adct/index.php /var/www/adct/secure/index.php
 
 # apache2
 sudo sed -i 's/CustomLog .* combined/CustomLog \$\{APACHE_LOG_DIR\}\/access.log combined/' /var/www/adct/etc/adct*.conf
