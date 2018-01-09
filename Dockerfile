@@ -31,7 +31,7 @@ RUN a2ensite adct.conf adct-ssl.conf
 
 # System account
 RUN useradd -r -u 1001 user
-RUN chown -R user: /etc/ssl/private/ /var/log/apache2/ /var/run/apache2/
+RUN chown -RL user: /etc/ssl/private/ /var/log/apache2/ /var/run/apache2/
 
 # Expose ports
 EXPOSE 8080 8443
