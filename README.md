@@ -32,10 +32,10 @@ A small web app container for testing Application Delivery Controllers in lab en
 docker run -dit -p 80:8080 -p 443:8443 artioml/adct
 ```
 
-Add a custom node name to the page title:
+Add a custom node name to the page title (supports HTML "Injection"):
 
 ```shell
-docker run -dit -p 80:8080 -p 443:8443 -e NODE='Node1' artioml/adct
+docker run -dit -p 80:8080 -p 443:8443 -e NODE='<b>Node1</b>' artioml/adct
 ```
 
 #### WebSocket Echo (`/ws/`)
