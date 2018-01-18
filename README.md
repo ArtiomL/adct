@@ -61,7 +61,7 @@ docker run -dit -p 4433:4433 artioml/adct:ws
 
 ## Customization
 
-Add custom CSS or JavaScript by mounting the `css/custom.css` and/or `js/custom.js` file(s) into the container instance:
+Add custom CSS or JavaScript by mounting the `css/custom.css` and/or `js/custom.js` file(s) into the container instance. For example:
 
 ```
 docker run -dit -p 80:8080 -p 443:8443 \
