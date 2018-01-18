@@ -15,6 +15,7 @@
 	- [Main Site](#main-site)
 	- [WebSocket Echo](#websocket-echo)
 - [Service Tree](#service-tree)
+- [Customization](#customization)
 - [License](LICENSE)
 
 &nbsp;&nbsp;
@@ -54,4 +55,17 @@ docker run -dit -p 4433:4433 artioml/adct:ws
 │   └── Alias for DocumentRoot (/var/www/adct/)
 └── ws/
     └── WebSocket Echo
+```
+
+&nbsp;&nbsp;
+
+## Customization
+
+Add custom CSS or JavaScript by mounting the `css/custom.css` and/or `js/custom.js` file(s) into the container instance. For example:
+
+```
+docker run -dit -p 80:8080 -p 443:8443 \
+	-v /path/to/your.css:/var/www/adct/css/custom.css \
+	-v /path/to/your.js:/var/www/adct/js/custom.js \
+	artioml/adct
 ```
