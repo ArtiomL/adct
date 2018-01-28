@@ -1,13 +1,13 @@
 # adct - CI Build
 # https://github.com/ArtiomL/adct
 # Artiom Lichtenstein
-# v1.1.0, 10/01/2018
+# v1.1.1, 28/01/2018
 
 sudo: required
 
 env:
   global:
-  - REPO=artioml/adct
+  - REPO="artioml/adct"
   - secure: "ajNtR+mlKxxF/RGUqbtm03VwxJZLAtSMPQ7oaCfx/Vrdx+Ir23ngs259ZLqjC/h8oXVTd3qmsJWoB8n9bk3kPD7AcfKgXTvQQgoX1D3xXcwuqKeUTwABC/jWt5MWvFnprwqM+CohyhNAS1sURQueZOiFhKKyJj2YdKO4nW5jxGt1PlaVhVDisj2r1XKjs64TTP+sshX0m2Dj7lF56umyht8QPWH5XxiSXPGcLgWyDsjCfAPddhDeNFPiKa+irk506FN8aBvCz0Vnm5kNnuM5Sww6u1Hg1XbU7XWZZKKqmrtsjmgbfG4HBaS63+5T0WDcRKjY+9n4LgWf/37gJg0IbrK93AzqfCOAnQBI8GVIAUQT6g0OGxFVDz2lBfIIrDHCkLCLushajimCE8VGAtk1cz6+x2QjrfL6KuI/w3kdm9QczP5MjbSTtlZjpbEyAfexkj6eDybXjptZk08sByI5pXH+b8DfFbBAYuywkgbAvQcEz5Kkue98SFZEiXPY0kDOgElh39EBHqj1/DC21sHh+oOU42iMGgwBtAgDzyjL2XomA3D1fwVA9eFJ2sNIwwPP2N+O29cDalnh3J+PIgj/KyiFTMUyBvWNI/lzkeF3KluL38TSxWXlOz2SWD5qtVRjsXtHZysQDXlPiB8NZl85NjqG5UWts/yu2gqCFtc10Aw="
   - secure: "RozgVe+P2K5q/XeTvmqrG7Dz8OCFbK8iVEwVn9T5g6d+18ebVxK3koesrAsUQr6R9yd5uDfClR2EFwnnjFRwyznc4J37xdrcGd5QVKjmaovts1Rxyg1wmCxH2QMx2eOyfgFR3m96jcYMvFSf9gDX7u4lVkKqhNtbKyb143FEYB8NJwRjAuJoe/pXkyHU35AKZ9Fik/N3p60bbtTeP6ZHjfO6v4dRT+rgxOW8qCgyKkShqEJA/uV7R2cbsEPZzjje3pvyjpOy1kfnS4AP2caafEPWkHl0vwH4hvahBtxkNTWidHDHxusxywsBV2GMucQj7iUqdhfTIxZMip0Ad0GY7iFQLzD4k8JQc2Tbd1ESmBAnN5EkfhfEXEq8+ceP7fuHiu7SfYy9qQuGvCAmt34/tyP8sZF6s0Yu/6nSLTIZ4yzzEIoFXtTb+E7mtJwjLadCvBwDJs8Icl9zWfp+SAvSmxo+LKAxZoco5hrXBt3cKUXNW6WMyX28LCLrxTT4Cv28VLdGsMMxoES/W/xaSw0QCGnxNiTJuMpyfkJpM6KuGZzaJ9Ja+733cjELtHTw9+OxoGMlxYRRZIWB7zKfjkSpGCmj0J3Q/t+c7WIHWb505SoK5AxDuIDQ8pxT/31oApGJ+3VkRqK70ldIGUrtXLxNapdewD1IPI0J2LS+JdAiPko="
 
@@ -21,16 +21,14 @@ services:
 install:
   - npm install -g wscat3
 
+before_script:
+  - chmod +x scripts/test.sh
+
 script:
   - docker build -t $REPO .
   - cd ws
   - docker build -t $REPO:ws .
-  - docker run -dit -p 80:8080 -p 443:8443 $REPO
-  - docker run -dit -p 4433:4433 $REPO:ws
-  - docker ps -a
-  - curl -s http://127.0.0.1/uri$(shuf -i 0-1313 -n 1)/index.php | grep 'hello, world'
-  - curl -sk https://127.0.0.1/uri$(shuf -i 0-1313 -n 1)/secure/index.php -u user:user | grep 'hello, user'
-  - echo 'hello, world' | wscat -s echo ws://127.0.0.1:4433 | grep 'hello, world'
+  - ../scripts/test.sh
 
 after_success:
   - docker images
