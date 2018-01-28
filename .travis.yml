@@ -28,7 +28,7 @@ script:
   - docker build -t $REPO .
   - cd ws
   - docker build -t $REPO:ws .
-  - scripts/test.sh
+  - /scripts/test.sh
 
 after_success:
   - docker images
