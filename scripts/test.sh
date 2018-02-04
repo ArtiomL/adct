@@ -1,4 +1,9 @@
 #!/bin/bash
+# adct - Run Tests
+# https://github.com/ArtiomL/adct
+# Artiom Lichtenstein
+# v1.0.0, 01/02/2018
+
 set -xe
 set -o pipefail
 
