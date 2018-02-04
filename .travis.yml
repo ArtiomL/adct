@@ -22,13 +22,13 @@ install:
   - npm install -g wscat3
 
 before_script:
-  - chmod +x scripts/test.sh
+  - chmod +x test/run.sh
 
 script:
   - docker build -t $REPO .
   - cd ws
   - docker build -t $REPO:ws .
-  - ../scripts/test.sh
+  - ../test/run.sh
 
 after_success:
   - docker images

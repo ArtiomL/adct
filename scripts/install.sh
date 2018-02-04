@@ -1,5 +1,5 @@
 #!/bin/bash
-# adct - install.sh
+# adct - Docker-less Installation
 # https://github.com/ArtiomL/adct
 # Artiom Lichtenstein
 # v1.0.4, 09/01/2018
