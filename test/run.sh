@@ -4,8 +4,7 @@
 # Artiom Lichtenstein
 # v1.0.0, 01/02/2018
 
-set -xe
-set -o pipefail
+set -xeo pipefail
 
 REPO="artioml/adct"
 
