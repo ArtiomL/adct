@@ -1,14 +1,14 @@
 # adct:ws - Dockerfile
 # https://github.com/ArtiomL/adct
 # Artiom Lichtenstein
-# v1.0.5, 22/12/2017
+# v1.0.6, 03/08/2018
 
 FROM alpine
 
-LABEL maintainer="Artiom Lichtenstein" version="1.0.5"
+LABEL maintainer="Artiom Lichtenstein" version="1.0.6"
 
 # Core dependencies
-RUN apk add --update --no-cache nodejs && \
+RUN apk add --update --no-cache nodejs-npm && \
 	rm -rf /var/cache/apk/*
 
 # adct:ws
