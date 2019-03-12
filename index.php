@@ -2,7 +2,7 @@
 	adct - index.php
 	https://github.com/ArtiomL/adct
 	Artiom Lichtenstein
-	v3.0.5, 12/03/2019
+	v3.0.5, 13/03/2019
 -->
 
 <!DOCTYPE html>
