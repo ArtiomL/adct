@@ -70,7 +70,7 @@
 		<div class="docs-section" style="margin-top: 30px; float:right;">
 			Artiom Lichtenstein<br>Solutions Architect<br>Amazon Web Services<br><a href="https://artioml.net/" target="_blank">https://artioml.net</a>
 			<p style="margin-top: 10px;">
-				<a href="https://github.com/ArtiomL/adct" target="_blank"><img src="https://img.shields.io/maintenance/yes/2018.svg"></a>
+				<a href="https://github.com/ArtiomL/adct" target="_blank"><img src="https://img.shields.io/maintenance/yes/2019.svg"></a>
 				<a href="https://hub.docker.com/r/artioml/adct/" target="_blank"><img src="https://img.shields.io/docker/pulls/artioml/adct.svg?label=docker"></a>
 			</p>
 		</div>
